@@ -87,29 +87,6 @@ void printErrorLog(const Program& program, const Device& device){
 	exit(1);
 }
 
-void selectRenderMode(unsigned int& rendermode){
-	cout << endl << "Rendermodes: " << endl << endl;
-	cout << "\t(1) Simple gradient" << endl;
-	cout << "\t(2) Sphere with plain colour" << endl;
-	cout << "\t(3) Sphere with cosine weighted colour" << endl;
-	cout << "\t(4) Stripey sphere" << endl;
-	cout << "\t(5) Sphere with screen door effect" << endl;
-	cout << "\t(6) Sphere with normals" << endl;
-
-	unsigned int input;
-	cout << endl << "Select rendermode (1-6): ";
-	cin >> input;
-
-	// handle incorrect user input
-	while (input < 1 || input > 6){
-		cin.clear(); //clear errors/bad flags on cin
-		cin.ignore(cin.rdbuf()->in_avail(), '\n'); // ignores exact number of chars in cin buffer
-		cout << "No such option. Select rendermode: ";
-		cin >> input;
-	}
-	rendermode = input;
-}
-
 void initOpenCL()
 {
 	// Get all available OpenCL platforms (e.g. AMD OpenCL, Nvidia CUDA, Intel OpenCL)

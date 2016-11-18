@@ -4,7 +4,7 @@
 
 __constant float EPSILON = 0.00003f; /* required to compensate for limited float precision */
 __constant float PI = 3.14159265359f;
-__constant int SAMPLES = 64;
+__constant int SAMPLES = 128;
 
 typedef struct Ray{
 	float3 origin;
